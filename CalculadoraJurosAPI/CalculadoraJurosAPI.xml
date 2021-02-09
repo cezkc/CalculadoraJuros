@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CalculadoraJurosAPI</name>
+    </assembly>
+    <members>
+        <member name="M:CalculadoraJurosAPI.Controllers.CalculaJurosController.Get(System.Decimal,System.Int32)">
+            <summary>
+            Calcula os juros do valor informado pelos meses e taxa em vigor
+            </summary>
+            <param name="valorInicial"></param>
+            <param name="meses"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CalculadoraJurosAPI.Controllers.ShowMeTheCodeController.Get">
+            <summary>
+            O link para o GitHub com o código desenvolvido encontra-se no retorno dessa requisição.
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
