@@ -9,7 +9,7 @@ namespace CalculadoraJuros.Tests
     {
 
         [Fact]
-        public void CalcularConformeAFormulaEsperada()
+        public void CalcularJurosTest()
         {
             ICalcularJurosService calcularJurosService = new CalcularJurosService();
 
