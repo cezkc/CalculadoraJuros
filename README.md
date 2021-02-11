@@ -7,7 +7,7 @@
 ### Escolhas do projeto
 - Foi utilizada a Clean Architecture, uma vez que isola os componentes e é de fácil entendimento. Ainda facilita a extensão da aplicação caso necessário
 - Swagger foi utilizado para documentação da API e testes unitários
-- Testes unitários nos componentes e testes integrados nas APIs
+- Testes de unidade nos componentes
 
 ### Diagrama do sistema
 ![alt text](https://i.imgur.com/8hn6AXo.png)
