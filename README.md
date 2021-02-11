@@ -9,5 +9,5 @@
 - Swagger foi utilizado para documentação da API e testes unitários
 - Testes unitários nos componentes e testes integrados nas APIs
 
-### Diagrama de componente
+### Diagrama do sistema
 ![alt text](https://i.imgur.com/8hn6AXo.png)
