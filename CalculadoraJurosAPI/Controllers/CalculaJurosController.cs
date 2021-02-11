@@ -32,11 +32,11 @@ namespace CalculadoraJurosAPI.Controllers
         [HttpGet]
         public async Task<ActionResult> Get(decimal valorInicial, int meses)
         {
-            var taxaJuros = await _buscarDadosExternosService.GetTaxaJuros();
-            var calculadora = new CalculadoraJurosCompostos(valorInicial, meses, taxaJuros);
             decimal resultado = 0M;
             try
             {
+                var taxaJuros = await _buscarDadosExternosService.GetTaxaJuros();
+                var calculadora = new CalculadoraJurosCompostos(valorInicial, meses, taxaJuros);
                 resultado = calculadora.Calcular();
             }
             catch (Exception ex)
