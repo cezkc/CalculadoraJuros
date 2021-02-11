@@ -1,7 +1,7 @@
 ## Calculadora de Juros 
 
 ### Instruções de setup e testes
-- Os dois projetos de API devem estar como setup project, uma API chama a outra;
+- Os dois projetos de API dentro da pasta API devem estar como startup project, uma API chama a outra;
 - Os testes unitários e de integração estão no projeto CalculadoraJuros.Tests, separados por pastas
 
 ### Escolhas do projeto
