@@ -10,4 +10,4 @@
 - Testes unitários nos componentes e testes integrados nas APIs
 
 ### Diagrama de componente
-![alt text](https://i.imgur.com/prZmWnZ.png)
+![alt text](https://i.imgur.com/l3nEcMF.png)
