@@ -6,7 +6,7 @@
     <members>
         <member name="M:CalculadoraJurosAPI.Controllers.CalculaJurosController.Get(System.Decimal,System.Int32)">
             <summary>
-            Calcula os juros do valor informado pelos meses e taxa em vigor
+            Calcula os juros do valor informado sobre meses e taxa em vigor
             </summary>
             <param name="valorInicial"></param>
             <param name="meses"></param>

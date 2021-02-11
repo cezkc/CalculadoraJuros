@@ -24,7 +24,7 @@ namespace CalculadoraJurosAPI.Controllers
         }
 
         /// <summary>
-        /// Calcula os juros do valor informado pelos meses e taxa em vigor
+        /// Calcula os juros do valor informado sobre meses e taxa em vigor
         /// </summary>
         /// <param name="valorInicial"></param>
         /// <param name="meses"></param>
@@ -35,7 +35,6 @@ namespace CalculadoraJurosAPI.Controllers
             var taxaJuros = await _buscarDadosExternosService.GetTaxaJuros();
             var calculadora = new CalculadoraJurosCompostos(valorInicial, meses, taxaJuros);
             decimal resultado = 0M;
-
             try
             {
                 resultado = calculadora.Calcular();

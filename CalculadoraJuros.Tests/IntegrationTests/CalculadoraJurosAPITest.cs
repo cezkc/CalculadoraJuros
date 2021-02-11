@@ -1,10 +1,12 @@
 ﻿using CalculadoraJuros.Domain.Classes;
-using CalculadoraJurosAPI;
+using JurosAPI;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
+using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using Xunit;
@@ -13,40 +15,34 @@ namespace CalculadoraJuros.Tests
 {
     public class CalculadoraJurosAPITest
     {
-        private readonly TestServer _server;
-        private readonly HttpClient _client;
-
+        TestServer _server;
+        HttpClient _client;
         public CalculadoraJurosAPITest()
         {
             _server = new TestServer(new WebHostBuilder()
-               .UseStartup<Startup>());
+               .UseStartup<JurosAPI.Startup>());
+
             _client = _server.CreateClient();
+
         }
 
         /// <summary>
         /// Teste da chamada API endpoint CalcularJuros pelo modo correto
         /// </summary>
         [Fact]
-        public async void CalcularJuros()
+        public async void Test_Calculate_Flux()
         {
-
-            var response = await _client.GetAsync("/CalculaJuros?valorInicial=100&meses=5");
-            response.EnsureSuccessStatusCode();
+            var response = await _client.GetAsync("/taxaJuros");
             var responseString = await response.Content.ReadAsStringAsync();
-            var valor = JsonConvert.DeserializeObject<decimal>(responseString);
+            var valorInicial = 100M;
+            var meses = 5;
+            response.EnsureSuccessStatusCode();
+            var taxaJuros = JsonConvert.DeserializeObject<decimal>(responseString);
 
-            Assert.Equal(105.1M, valor);
-        }
+            var calculadora = new CalculadoraJurosCompostos(valorInicial, meses, taxaJuros);
+            var resultado = calculadora.Calcular();
 
-        /// <summary>
-        /// Teste da chamada API endpoint CalcularJuros com parâmetros incorretos
-        /// </summary>
-        [Fact]
-        public async void CalcularJurosComParametrosInvalidos()
-        {
-            var response = await _client.GetAsync("/CalculaJuros?valorInicial=456465454654&meses=546546465");
-
-            Assert.Equal(System.Net.HttpStatusCode.BadRequest, response.StatusCode);
+            Assert.Equal(105.1M, resultado);
         }
 
     }

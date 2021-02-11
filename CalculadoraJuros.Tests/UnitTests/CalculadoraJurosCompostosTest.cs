@@ -20,9 +20,9 @@ namespace CalculadoraJuros.Tests
             int meses = 5;
             decimal taxaJuros = 0.01M;
 
-            CalculadoraJurosCompostos calcularJurosService = new CalculadoraJurosCompostos(valorInicial, meses, taxaJuros);
+            CalculadoraJurosCompostos calculadoraJuros = new CalculadoraJurosCompostos(valorInicial, meses, taxaJuros);
 
-            Assert.Equal(105.1M, calcularJurosService.Calcular());
+            Assert.Equal(105.1M, calculadoraJuros.Calcular());
         }
     }
 }
