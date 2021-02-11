@@ -27,7 +27,7 @@ namespace CalculadoraJurosAPI.Controllers
         [HttpGet]
         public ActionResult Get()
         {
-            return Ok("https://github.com/cezkc/");
+            return Ok("https://github.com/cezkc/CalculadoraJuros");
         }
     }
 }

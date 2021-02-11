@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using CalculadoraJuros.Domain.Classes;
 using CalculadoraJuros.Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -15,11 +16,11 @@ namespace CalculadoraJurosAPI.Controllers
     [Route("[controller]")]
     public class CalculaJurosController : ControllerBase
     {
-        public readonly ICalcularJurosService _calcularJurosService;
+        public readonly IBuscarDadosExternosService _buscarDadosExternosService;
 
-        public CalculaJurosController(ICalcularJurosService calcularJurosService)
+        public CalculaJurosController(IBuscarDadosExternosService buscarDadosExternosService)
         {
-            _calcularJurosService = calcularJurosService;
+            _buscarDadosExternosService = buscarDadosExternosService;
         }
 
         /// <summary>
@@ -31,10 +32,21 @@ namespace CalculadoraJurosAPI.Controllers
         [HttpGet]
         public async Task<ActionResult> Get(decimal valorInicial, int meses)
         {
-            var taxaJuros = await _calcularJurosService.GetTaxaJuros();
-            var valorCalculado = _calcularJurosService.CalcularJuros(valorInicial, meses, taxaJuros);
-           
-            return Ok(valorCalculado);
+            var taxaJuros = await _buscarDadosExternosService.GetTaxaJuros();
+            var calculadora = new CalculadoraJurosCompostos(valorInicial, meses, taxaJuros);
+            decimal resultado = 0M;
+
+            try
+            {
+                resultado = calculadora.Calcular();
+            }
+            catch (Exception ex)
+            {
+                var message = new string[] { ex.Message };
+               return BadRequest(new ErrorModel(message));
+            }
+
+            return Ok(resultado);
         }
     }
 }

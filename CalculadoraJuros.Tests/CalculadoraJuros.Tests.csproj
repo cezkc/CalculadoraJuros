@@ -20,8 +20,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CalculadoraJurosAPI\CalculadoraJurosAPI.csproj" />
-    <ProjectReference Include="..\Domain\CalculadoraJuros.Domain.csproj" />
-    <ProjectReference Include="..\Services\CalculadoraJuros.Services.csproj" />
   </ItemGroup>
 
 </Project>

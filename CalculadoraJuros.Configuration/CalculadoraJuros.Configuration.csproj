@@ -11,8 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Domain\CalculadoraJuros.Domain.csproj" />
-    <ProjectReference Include="..\Services\CalculadoraJuros.Services.csproj" />
+    <ProjectReference Include="..\CalculadoraJuros.Domain\CalculadoraJuros.Domain.csproj" />
+    <ProjectReference Include="..\CalculadoraJuros.Services\CalculadoraJuros.Services.csproj" />
   </ItemGroup>
 
 </Project>

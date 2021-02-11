@@ -11,7 +11,7 @@ namespace CalculadoraJuros.Controllers
     [Route("[controller]")]
     public class TaxaJurosController : ControllerBase
     {
-        private static readonly decimal TAXA_JUROS = 0.01M;
+        private const decimal TAXA_JUROS = 0.01M;
 
         public TaxaJurosController()
         {

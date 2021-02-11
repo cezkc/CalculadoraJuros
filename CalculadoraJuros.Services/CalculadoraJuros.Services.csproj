@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Domain\CalculadoraJuros.Domain.csproj" />
+    <ProjectReference Include="..\CalculadoraJuros.Domain\CalculadoraJuros.Domain.csproj" />
   </ItemGroup>
 
 </Project>

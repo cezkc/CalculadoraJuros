@@ -8,6 +8,9 @@ namespace CalculadoraJuros.Tests
 {
     public class MathExtensionsTest
     {
+        /// <summary>
+        /// Teste do método TruncateTwoDecimalPlacesTest
+        /// </summary>
         [Fact]
         public void TruncateTwoDecimalPlacesTest()
         {

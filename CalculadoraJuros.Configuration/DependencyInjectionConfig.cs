@@ -8,7 +8,7 @@ namespace CalculadoraJuros.Configuration
     {
         public static void Configure(IServiceCollection services)
         {
-            services.AddScoped(typeof(ICalcularJurosService), typeof(CalcularJurosService));
+            services.AddScoped(typeof(IBuscarDadosExternosService), typeof(BuscarDadosExternosService));
         }
     }
 }

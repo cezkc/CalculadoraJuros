@@ -9,9 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculadoraJurosAPI", "Calc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculadoraJuros.Configuration", "CalculadoraJuros.Configuration\CalculadoraJuros.Configuration.csproj", "{BEC7A9DA-5446-46AE-B360-155CC9D9287B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculadoraJuros.Services", "Services\CalculadoraJuros.Services.csproj", "{397DB564-8DFE-494E-B0B7-D03DEFAF0531}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculadoraJuros.Services", "CalculadoraJuros.Services\CalculadoraJuros.Services.csproj", "{397DB564-8DFE-494E-B0B7-D03DEFAF0531}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculadoraJuros.Domain", "Domain\CalculadoraJuros.Domain.csproj", "{290361FE-437E-44DC-989E-AF5327F760F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculadoraJuros.Domain", "CalculadoraJuros.Domain\CalculadoraJuros.Domain.csproj", "{290361FE-437E-44DC-989E-AF5327F760F4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{2D8628B1-2B47-4ABB-864B-6506BD89CF26}"
 EndProject

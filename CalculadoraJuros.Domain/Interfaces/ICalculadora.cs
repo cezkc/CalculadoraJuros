@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace CalculadoraJuros.Domain.Interfaces
+{
+
+    /// <summary>
+    /// Classe para implementação de calculadoras conforme regra de negócio necessária
+    /// </summary>
+    public interface ICalculadora
+    {
+        decimal Calcular();
+    }
+}

@@ -7,15 +7,8 @@ using System.Threading.Tasks;
 
 namespace CalculadoraJuros.Services
 {
-    public class CalcularJurosService : ICalcularJurosService
+    public class BuscarDadosExternosService : IBuscarDadosExternosService
     {
-
-        public decimal CalcularJuros(decimal valorInicial, int meses, decimal taxaJuros)
-        {
-            var valorFinal = valorInicial * Convert.ToDecimal(Math.Pow(Convert.ToDouble((1 + taxaJuros)), meses));
-            return MathExtension.TruncateTwoDecimalPlaces(valorFinal);
-        }
-
         public async Task<decimal> GetTaxaJuros()
         {
             var taxaJuros = 0M;
