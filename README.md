@@ -10,4 +10,4 @@
 - Testes de unidade nos componentes
 
 ### Diagrama do sistema
-![alt text](https://i.imgur.com/8hn6AXo.png)
+![alt text](https://i.imgur.com/b7EcdLY.png)
