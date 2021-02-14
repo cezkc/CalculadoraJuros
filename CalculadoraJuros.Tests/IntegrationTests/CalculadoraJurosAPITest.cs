@@ -27,7 +27,7 @@ namespace CalculadoraJuros.Tests
         }
 
         /// <summary>
-        /// Teste da chamada API endpoint CalcularJuros pelo modo correto
+        /// Teste simulando uma chamada da CalculadoraJurosAPI
         /// </summary>
         [Fact]
         public async void Test_Calculate_Flux()
@@ -39,7 +39,9 @@ namespace CalculadoraJuros.Tests
             response.EnsureSuccessStatusCode();
             var taxaJuros = JsonConvert.DeserializeObject<decimal>(responseString);
 
-            var calculadora = new CalculadoraJurosCompostos(valorInicial, meses, taxaJuros);
+            //esta parte foi feita simulando o que está dentro da chamada do endpoint /CalculadoraJuros,
+            //pois não estava sendo possível chamar a API de dentro de outra API pelo TestServer
+            var calculadora = new CalculadoraJurosCompostos(valorInicial, meses, taxaJuros); 
             var resultado = calculadora.Calcular();
 
             Assert.Equal(105.1M, resultado);
