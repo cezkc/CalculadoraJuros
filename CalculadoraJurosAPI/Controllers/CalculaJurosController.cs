@@ -17,10 +17,12 @@ namespace CalculadoraJurosAPI.Controllers
     public class CalculaJurosController : ControllerBase
     {
         public readonly IBuscarDadosExternosService _buscarDadosExternosService;
+        public readonly ICalculadora _calculadoraJuros;
 
-        public CalculaJurosController(IBuscarDadosExternosService buscarDadosExternosService)
+        public CalculaJurosController(IBuscarDadosExternosService buscarDadosExternosService, ICalculadora calculadoraJuros)
         {
             _buscarDadosExternosService = buscarDadosExternosService;
+            _calculadoraJuros = calculadoraJuros;
         }
 
         /// <summary>
@@ -36,13 +38,17 @@ namespace CalculadoraJurosAPI.Controllers
             try
             {
                 var taxaJuros = await _buscarDadosExternosService.GetTaxaJuros();
-                var calculadora = new CalculadoraJurosCompostos(valorInicial, meses, taxaJuros);
-                resultado = calculadora.Calcular();
+                resultado = _calculadoraJuros.Calcular(valorInicial, meses, taxaJuros);
+            }
+            catch (ArgumentException ex)
+            {
+                var message = new string[] { ex.Message };
+               return BadRequest(new ErrorModel(message));
             }
             catch (Exception ex)
             {
                 var message = new string[] { ex.Message };
-               return BadRequest(new ErrorModel(message));
+                return StatusCode(500,new ErrorModel(message));
             }
 
             return Ok(resultado);

@@ -11,30 +11,26 @@ namespace CalculadoraJuros.Domain.Classes
     /// </summary>
     public class CalculadoraJurosCompostos : ICalculadora
     {
-        public decimal ValorInicial { get; private set; }
-        public int Meses { get; private set; }
-        public decimal TaxaJuros { get; private set; }
 
-        /// <param name="valorInicial">Valor inicial da dívida</param>
-        /// <param name="meses">Tempo em meses para cálculo dos juros</param>
-        /// <param name="taxaJuros">Taxa de Juros definida</param>
-        public CalculadoraJurosCompostos(decimal valorInicial, int meses, decimal taxaJuros)
+
+        public CalculadoraJurosCompostos()
         {
-            ValorInicial = valorInicial;
-            Meses = meses;
-            TaxaJuros = taxaJuros;
+
         }
 
         /// <summary>
         /// Cálculo de juros compostos
         /// </summary>
+        /// <param name="valorInicial">Valor inicial da dívida</param>
+        /// <param name="meses">Tempo em meses para cálculo dos juros</param>
+        /// <param name="taxaJuros">Taxa de Juros definida</param>
         /// <returns></returns>
-        public decimal Calcular()
+        public decimal Calcular(decimal valorInicial, int meses, decimal taxaJuros)
         {
-            var valorFinal = (double)ValorInicial * Math.Pow(Convert.ToDouble((1 + TaxaJuros)), Meses);
-            
+            var valorFinal = (double)valorInicial * Math.Pow(Convert.ToDouble((1 + taxaJuros)), meses);
+
             if (double.IsInfinity(valorFinal))
-                throw new Exception($"não é possível calcular o valor desejado (resultado infinito). Valor Inicial = {ValorInicial}, Taxa de Juros = {TaxaJuros}, Meses = {Meses}");
+                throw new ArgumentException($"não é possível calcular o valor desejado (resultado infinito). Valor Inicial = {valorInicial}, Taxa de Juros = {taxaJuros}, Meses = {meses}");
 
             return MathExtension.TruncateTwoDecimalPlaces((decimal)valorFinal);
         }

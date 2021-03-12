@@ -41,8 +41,8 @@ namespace CalculadoraJuros.Tests
 
             //esta parte foi feita simulando o que está dentro da chamada do endpoint /CalculadoraJuros,
             //pois não estava sendo possível chamar a API de dentro de outra API pelo TestServer
-            var calculadora = new CalculadoraJurosCompostos(valorInicial, meses, taxaJuros); 
-            var resultado = calculadora.Calcular();
+            var calculadora = new CalculadoraJurosCompostos(); 
+            var resultado = calculadora.Calcular(valorInicial, meses, taxaJuros);
 
             Assert.Equal(105.1M, resultado);
         }

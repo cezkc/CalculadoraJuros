@@ -10,6 +10,6 @@ namespace CalculadoraJuros.Domain.Interfaces
     /// </summary>
     public interface ICalculadora
     {
-        decimal Calcular();
+        decimal Calcular(decimal valorInicial, int meses, decimal taxaJuros);
     }
 }

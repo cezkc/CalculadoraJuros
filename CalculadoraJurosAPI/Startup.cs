@@ -1,5 +1,6 @@
 using CalculadoraJuros.Configuration;
 using CalculadoraJuros.Domain.Classes;
+using CalculadoraJurosAPI.Util;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -31,8 +32,11 @@ namespace CalculadoraJurosAPI
                   };
               });
 
+            services.Configure<AppSettingsConfig>(Configuration.GetSection("Config"));
+
             DependencyInjectionConfig.Configure(services);
             SwaggerConfig.ConfigureServices(services);
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,7 +48,8 @@ namespace CalculadoraJurosAPI
             }
 
             app.UseSwagger();
-            app.UseSwaggerUI(c => {
+            app.UseSwaggerUI(c =>
+            {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Calculadora de Juros V1");
             });
 
