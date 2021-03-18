@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
-using CalculadoraJuros.Domain.Classes;
+﻿using CalculadoraJuros.Domain.Classes;
 using CalculadoraJuros.Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
+using System;
+using System.Threading.Tasks;
 
 namespace CalculadoraJurosAPI.Controllers
 {
@@ -43,12 +37,12 @@ namespace CalculadoraJurosAPI.Controllers
             catch (ArgumentException ex)
             {
                 var message = new string[] { ex.Message };
-               return BadRequest(new ErrorModel(message));
+                return BadRequest(new ErrorModel(message));
             }
             catch (Exception ex)
             {
                 var message = new string[] { ex.Message };
-                return StatusCode(500,new ErrorModel(message));
+                return StatusCode(500, new ErrorModel(message));
             }
 
             return Ok(resultado);

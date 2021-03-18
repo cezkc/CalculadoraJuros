@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CalculadoraJuros.Domain.Interfaces
+﻿namespace CalculadoraJuros.Domain.Interfaces
 {
 
     /// <summary>

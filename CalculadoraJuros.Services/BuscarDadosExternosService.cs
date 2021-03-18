@@ -1,5 +1,4 @@
-﻿using CalculadoraJuros.Domain.Extensions;
-using CalculadoraJuros.Domain.Interfaces;
+﻿using CalculadoraJuros.Domain.Interfaces;
 using CalculadoraJurosAPI.Util;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;

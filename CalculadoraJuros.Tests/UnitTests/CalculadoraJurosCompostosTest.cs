@@ -1,7 +1,4 @@
 using CalculadoraJuros.Domain.Classes;
-using CalculadoraJuros.Domain.Interfaces;
-using CalculadoraJuros.Services;
-using System;
 using Xunit;
 
 namespace CalculadoraJuros.Tests

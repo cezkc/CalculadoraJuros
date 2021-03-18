@@ -1,14 +1,7 @@
-﻿using CalculadoraJuros.Domain.Classes;
-using JurosAPI;
-using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
-using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Net;
 using System.Net.Http;
-using System.Text;
 using Xunit;
 
 namespace CalculadoraJuros.Tests
